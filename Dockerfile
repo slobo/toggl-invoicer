@@ -28,7 +28,7 @@ COPY vendor /app/vendor
 WORKDIR /app
 ENV PERL5LIB /app/local/lib/perl5
 
-# Appent WebService::Toggl's deps to the end of cpanfile
+# Append WebService::Toggl's deps to the end of cpanfile
 RUN cat ./vendor/cpan/WebService-Toggl/cpanfile >> cpanfile
 
 RUN ./vendor/bin/carton install && rm -rf $HOME/.cpanm
